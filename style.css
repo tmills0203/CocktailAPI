@@ -3,3 +3,36 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel {
+  width: 500px;
+  height: 500px;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  overflow: hidden;
+  margin-top: 4em;
+}
+
+.img-container {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5 ease-in-out;
+}
+
+.drinkName {
+  color: black;
+  font-size: 2rem;
+}
