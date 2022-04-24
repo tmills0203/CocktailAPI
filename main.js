@@ -25,26 +25,37 @@ fetch(url)
     }
   })
   .then(() => {
-    const imgs = document.querySelectorAll("#imgs img");
-    console.log(imgs);
+    // node drink imgs array
+    const nodeListArr = document.querySelectorAll("#imgs img");
+    let imgs = document.querySelector("#imgs");
+
+    let idx = 0;
+    setInterval(function () {
+      idx++;
+      if (idx > nodeListArr.length - 1) {
+        idx = 0;
+      } else if (idx < 0) {
+        idx = nodeListArr.length;
+      }
+      imgs.style.transform = `translateX(${-idx * 500}px)`;
+    }, 2000);
   })
   .catch((err) => {
     console.log(`error ${err}`);
   });
 
-let index = 0;
 // let interval = setInterval(run, 2000);
-function run() {
-  index++;
-  changeImg();
-}
+// function run() {
+//   idx++;
+//   changeImg();
+// }
 
-function changeImg() {
-  // check beginning
-  if (index > img.length - 1) {
-    index = 0;
-  } else if (index < 0) {
-    index = img.length;
-  }
-  imgs.style.transform = `translate(${-index * 500}px)`;
-}
+// function changeImg() {
+//   // check beginning
+//   if (idx > nodeListArr.length - 1) {
+//     index = 0;
+//   } else if (idx < 0) {
+//     idx = nodeListArr.length;
+//   }
+//   imgs.style.transform = `translate(${-index * 500}px)`;
+// }
