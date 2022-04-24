@@ -7,8 +7,9 @@ fetch(url)
   .then((res) => res.json()) // parse response as JSON
   .then((data) => {
     let imgOfDrinks = [];
+
     data.drinks.forEach((obj) => {
-      let [drink, drinkImg] = Object.values(obj);
+      let [, drinkImg] = Object.values(obj);
       imgOfDrinks.push(drinkImg);
     });
     return imgOfDrinks;
@@ -16,7 +17,6 @@ fetch(url)
   .then((imgOfDrinks) => {
     // all drinks in arr
     const imgContainer = document.querySelector(".img-container");
-
     let imgArr = imgOfDrinks;
 
     for (let i = 0; i < imgArr.length; i++) {
@@ -28,6 +28,7 @@ fetch(url)
     // node drink imgs array
     const nodeListArr = document.querySelectorAll("#imgs img");
     let imgs = document.querySelector("#imgs");
+    const h2 = document.querySelector("h2");
 
     let idx = 0;
     setInterval(function () {
@@ -43,19 +44,3 @@ fetch(url)
   .catch((err) => {
     console.log(`error ${err}`);
   });
-
-// let interval = setInterval(run, 2000);
-// function run() {
-//   idx++;
-//   changeImg();
-// }
-
-// function changeImg() {
-//   // check beginning
-//   if (idx > nodeListArr.length - 1) {
-//     index = 0;
-//   } else if (idx < 0) {
-//     idx = nodeListArr.length;
-//   }
-//   imgs.style.transform = `translate(${-index * 500}px)`;
-// }

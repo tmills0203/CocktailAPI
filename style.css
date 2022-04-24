@@ -11,6 +11,13 @@ body {
   background-color: cadetblue;
 }
 
+h1 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: aliceblue;
+}
+
 img {
   width: 500px;
   height: 500px;
